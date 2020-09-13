@@ -16,9 +16,10 @@ async function greeting() {
         })
     
     });
-    const responseBody = await response.json();
-    console.log(responseBody);
-    
+    const {data} = await response.json();
+    return data;
 }
-greeting();
+greeting().then(({greeting})=>{
+    console.log(greeting);    
+});
 
